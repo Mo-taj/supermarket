@@ -51,7 +51,8 @@ void add_items() {
         cin >> s.price;
         cout << "\n\n\t\tEnter expiry date: ";
         cin >> s.expirydate;
-
+        cout << "\n\n\t\tEnter id: ";
+        cin >> s.id;
         out.write((char*)&s, sizeof(s));
         cout << "\n\n\t\tProduct added successfully.\n";
 
@@ -136,7 +137,7 @@ void show_items()           // to view products in the super market (Read fun).
       {     do
 
       {
-      cout<<"\tproduct Name\t\tmobile phone\ttotal number product\n\n"<<endl;
+      cout<<"\tproduct Name\t\tmobile phone\tQuantity\n\n"<<endl;
             while(!in.eof())
             {
             in.read((char*)&b,sizeof(b));
@@ -231,12 +232,12 @@ void order(){
 		cin>>b.name;
 		cout<<" mobile phone : ";
 		cin>>b.phone;
-		cout<<" total number product  : ";
+		cout<<" Quantity  : ";
 		cin>>b.num_product;
 		f1.write((char*)&b,sizeof(b));
-		cout<<" _________________________________________________\n";
+		cout<<" _________________\n";
 
-  /*************************************************************/
+  /*********************/
 
 	int id=0;
 	int flag=0;
@@ -251,13 +252,13 @@ void order(){
         {
             cout<<"\n\tReservation sucessful \n";
 		   	cout<<"\n\tName : "<<b.name
-		   	<<"\n\tNumber phone : "<<b.phone
-		   	<<"\n\tproduct code : "<<s.id
-		   	<<"\n\tproduct Name : "<<s.productname
-		   	<<"\n\tThe  Price of "<< s.productname<<" : " <<s.price
-		   	<<"\n\tTotal order : "<<b.num_product
+		   	<<"\n\t Number phone : "<<b.phone
+		   	<<"\n\t product code : "<<s.id
+		   	<<"\n\t product Name : "<<s.productname
+		   	<<"\n\t product price :"<<s.price<<" EGP"
+		   	<<"\n\t Quantity: "<<b.num_product
 		   	<<"\n\tTotal price : "<<(s.price)*(b.num_product)<<" EGP"<<"\n";
-				cout<<"____________________________________________________\n";
+				cout<<"__________________\n";
 		  	   flag=1;
 	      }
 	      id=s.id;
@@ -266,9 +267,9 @@ void order(){
 	if(flag==0)
     {
 		cout<<"\n\tthis order not found..!\n";
-		cout<<" _________________________________________________\n";
+		cout<<" _________________\n";
 	}
-	/****************************************************************/
+	/**********************/
 	f1.close();
 	f2.close();
 }
@@ -280,7 +281,7 @@ int main()
     int f;
     int k , p;
     cout<<"\n\t\t===============SuperMarket================\n\n"<<endl;
-    cout<<"\t\t\t1_Client"<<"\n\n"<<"\t\t\t2_Seller\n\n"<<"\t\t______________chosse 1 or 2______________\n\n"<<endl;
+    cout<<"\t\t\t1_Client"<<"\n\n"<<"\t\t\t2_Seller\n\n"<<"\t\t_____chosse 1 or 2_____\n\n"<<endl;
     cin>>f;
     if(f==2)
     {
@@ -298,7 +299,7 @@ int main()
     cout<<"\t\t\t 5-delete\n\n"<<endl;
     cout<<"\t\t\t 6-update\n\n"<<endl;
     cout<<"\t\t\t 0-exit\n\n"<<endl;
-    cout<<"\t\t\t**chosse from ((0 to 5)**\n\n"<<endl;
+    cout<<"\t\t\t*chosse from ((0 to 6)*\n\n"<<endl;
     cin>>y;
     switch(y){
     case 1:
@@ -307,7 +308,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return to the menu\n";
 
 	  			   int p;   cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tExit!\n";
 							return 0;
@@ -323,7 +324,7 @@ int main()
 	  			  <<"__Press (1) Return\n";
 
 	  			     cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -337,7 +338,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return\n\n";
 
 	  			      cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -350,7 +351,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return\n\n";
 
 	  			      cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -363,7 +364,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return\n\n";
 
 	  			      cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -389,7 +390,7 @@ int main()
      cout<<"\t\t\t 2-Search for item\n\n"<<endl;
      cout<<"\t\t\t 3- Order\n\n"<<endl;
      cout<<"\t\t\t 0-exit\n\n"<<endl;
-     cout<<"\t\t\t**chosse from ((0 to 3)**\n\n"<<endl;
+     cout<<"\t\t\t*chosse from ((0 to 3)*\n\n"<<endl;
      cin>>y;
     switch(y)
     {
@@ -399,7 +400,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return\n\n";
 
 	  			      cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -413,7 +414,7 @@ int main()
 	  			           <<"\t\t\tPress (1) Return\n\n";
 
                             cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
@@ -428,7 +429,7 @@ int main()
 	  			  <<"\t\t\tPress (1) Return\n\n";
 
 	  			      cin>>p;
-	  		  cout<<" _________________________________________________\n";
+	  		  cout<<" _________________\n";
 	  		    	if(p==0){
 	  		    		cout<<"\t\t\tThank you !\n";
 							return 0;
